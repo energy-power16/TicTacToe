@@ -33,7 +33,16 @@ namespace Tic_Tac_Toe
             } while (!CheckGameOver());
 
             board.PrintBoard();
-            Console.WriteLine($"Player {currentPlayer} wins!");
+            if (currentPlayer == player1Symbol) 
+            {
+                Console.WriteLine($"Player {player2Symbol} wins!");
+            }
+            else
+            {
+                {
+                    Console.WriteLine($"Player {player1Symbol} wins!");
+                }
+            } 
         }
 
         private void MakeMove()
@@ -49,6 +58,9 @@ namespace Tic_Tac_Toe
                     Console.WriteLine("Invalid input. Try again.");
                     continue;
                 }
+
+                row--;
+                col--;
 
                 if (!board.IsValidMove(row, col))
                 {
@@ -70,8 +82,6 @@ namespace Tic_Tac_Toe
         {
             if (board.CheckWinner(player1Symbol) || board.CheckWinner(player2Symbol))
                 return true;
-
-            // Check for a tie
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)

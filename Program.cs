@@ -14,13 +14,7 @@ class Program
         Console.Write("Enter player 2 symbol: ");
         char player2Symbol = char.Parse(Console.ReadLine());
 
-        Console.Write("Enter player 1 game time in seconds: ");
-        int player1TimeInSeconds = int.Parse(Console.ReadLine());
-
-        Console.Write("Enter player 2 game time in seconds: ");
-        int player2TimeInSeconds = int.Parse(Console.ReadLine());
-
-        TimedSession ticTacToeSession = new TimedSession(boardSize, player1Symbol, player2Symbol, player1TimeInSeconds, player2TimeInSeconds);
+        Session ticTacToeSession = new Session(boardSize, player1Symbol, player2Symbol);
         ticTacToeSession.StartGame();
     }
 }
